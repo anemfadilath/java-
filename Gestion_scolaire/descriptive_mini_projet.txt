@@ -1,0 +1,69 @@
+MINI PROJET:GESTION SCOLAIRE
+
+
+Dans notre programme ont a 2 class mère PERSONNE et ADAMINISTRATION :La class ADMINISTRATION hérite de la class PERSONNE. La class ADMINISTRATION à 3 class fille
+SECRETAIRE, PROFESSEUR et PRO_RESPONSABLE. Toute ces class filles exécutent des méthodes comme Réserver une salle (on ne peut pas réserver une salle occuper.
+Si une salle est réserver elle est automatiquement mise en occuper), Afficher les salle disponible, Vérifier la disponibilité d'une salle.
+La class PERSONNE à une autre class fille qui est ETUDIANT
+
+
+
+METHODE CLASS SECRETAIRE:
+le secretaire est considéré comme l'administrateur du system.il exécute des méthodes comme suit
+
+     POUR ETUDIANT:-ajouter étudiant à une filière: en fournissant le nom et le niveau de la filière et les infos de l'étudiant
+                       (Deux étudiants d'une même filière ne peuvent pas avoir le même matricule)
+
+                   -Supprimer étudiant d'une filière: en donnant le matricule de l'étudiant et le nom et le niveau de sa filière
+
+                   -Enregistré un payement de scolarité d'un étudiant: en donnant le matricule de l'étudiant et le nom et le niveau de sa filière
+                    (la scolarité de tout les étudiant créer est définie à 30000)
+
+                   -Modifier information d'un étudiant (seulement matricule numéro téléphone ici):en donnant le matricule de l'étudiant/
+                   
+    POUR PROFESSEUR:-Ajouter un professeur a une filière: en fournissant ces information (nom;prenom,id....etc.) et le nom de la filière
+                       notons ici que quand un prof est ajouter a une filière 
+                    la filière est automatiquement ajouter dans la liste des filière enseigner du prof.
+
+                   -Supprimer un professeur d'une filière: en fournissant son identifiant et le nom de la filière
+
+                   -Ajouter une matière pour un prof: nous supposons qu'un prof peut enseigner plusieurs matières.
+
+                   -Ajouter un prof à l'établissement (sans l'ajouter à une filière)
+
+   POUR FILIERE:-Ajouter une filière: en fournissant le nom et le niveau.
+
+                -Supprimer une filière: en fournissant le nom et le niveau.
+
+                -modifier le prof responsable d'une filière: il faut noter ici que quand une filière est créer il est créer avec un constructeur qui non prend seulement les infos
+                  de la filière mais aussi le prof responsable : donc il faut modifier les information de cet prof après le création de la filière
+
+                -ajouter et supprimer une matières d'une filière: car la filière contient plusieurs matières
+
+  POUR réunion:-planifier une réunion: en indiquant nom,id,heur,date,sall.il faut .noter ici que si une salle n'est pas disponible vous ne pouvez pas planifier la
+                  réunion en donnant le numéro de cette salle.si elle est disponible elle est mise en occuper après la création de la réunion 
+                 PS: deux réunions ne peuvent pas avoir le même id
+
+                -modifier une réunion : en fournissant sont id
+                -supprimer une réunion en fournissant son id
+
+
+METHODE PROFESSEUR:
+                   -Afficher mes matières enseigner
+                   -Afficher les filières dans la quel il enseigne
+METHODE PROF_RESPONSABLE:
+                    -POUR réunion: même chose que chez le secrétaire
+
+
+
+Nous avons fait un menu qui permet à chaque acteur de choisir un cas d'utilisation et l'exécuter.
+Pour que chaque acteur arrive affiche son menu il doit se connecter
+  SECRTAIRE: Se connecte en fournissant le mot de passe prédéfinie qui est : secret
+  PROFESSEUR : Se connecte en fournissant le mot de passe prédéfinie qui est: professeur et son id---------la vérification de l'id est faite dans le liste des profs 
+  PROF_RESPONSSABLE: Se connecte en fournissant le mot de passe prédéfinie qui est : prof_responsablr et son id------la vérification de l'id est faite dans le liste des profs 
+
+
+NOTONS aussi que quand une ETUDIANT est ajouter dans un FILIERE il est ajouter dans l liste des étudiant de l'établissement et quand il est supprimer 
+D’une filière il est aussi supprimer de cette liste.la modification des informations de l'EUTUDIANT s'applique aussi sur les deux liste
+(Étudiant de filière et étudiant de l'établissement).
+il faut aussi noter que les class heure et date ont été programmer par nous même nous n'avons pas utilisé ceux prédéfinie dans java
